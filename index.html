@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bảo Tàng Số - Trường THPT Nam Cao</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;scroll-behavior:smooth}
+body{background:#f0f4fa;color:#1b2a4a;line-height:1.6}
+header{background:#0A367E;color:#fff;padding:12px 25px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:46px;height:46px;border-radius:50%;background:#fff;padding:2px;object-fit:cover;border:2px solid #F4B43A}
+header h1{font-size:18px;color:#F4B43A}
+nav a{color:#fff;text-decoration:none;margin-left:15px;font-weight:500}
+.hero{background:#0A367E;color:#fff;text-align:center;padding:50px 20px;border-bottom:4px solid #F4B43A}
+.hero h2{font-size:30px;color:#F4B43A;margin-bottom:8px}
+.stats{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:20px}
+.stat{background:rgba(255,255,255,0.12);padding:10px 16px;border-radius:8px;border:1px solid #F4B43A}
+.stat b{font-size:20px;color:#F4B43A;display:block}
+section{padding:40px 20px;max-width:1050px;margin:auto}
+h2.title{text-align:center;font-size:24px;color:#0A367E;margin-bottom:20px;text-transform:uppercase}
+.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:15px}
+.tab{padding:8px 16px;border:2px solid #0A367E;background:#fff;color:#0A367E;font-weight:bold;border-radius:20px;cursor:pointer}
+.tab.active,.tab:hover{background:#0A367E;color:#F4B43A}
+.box{background:#fff;padding:20px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,0.08);border-left:5px solid #0A367E}
+.img-wrap{position:relative;width:100%;max-width:680px;height:340px;margin:auto;overflow:hidden;border-radius:8px;border:2px solid #0A367E}
+.img-wrap img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+#oldImg{clip-path:inset(0 50% 0 0);filter:sepia(80%)}
+input[type=range]{width:100%;max-width:680px;display:block;margin:12px auto 0;cursor:pointer;accent-color:#0A367E}
+.search{width:100%;max-width:420px;display:block;margin:0 auto 18px;padding:10px 15px;border:2px solid #0A367E;border-radius:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:#fff;padding:18px;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.08);border-top:4px solid #F4B43A}
+.card h4{color:#0A367E;margin-bottom:5px}
+.btn{background:#0A367E;color:#F4B43A;padding:10px 14px;border:none;border-radius:6px;font-weight:bold;cursor:pointer;margin-top:8px;width:100%;text-align:left}
+input[type=text],textarea{width:100%;padding:9px;margin:6px 0;border:1px solid #b8c9e6;border-radius:6px}
+.notes{max-height:180px;overflow-y:auto;margin-top:10px}
+.note{background:#eef4fc;padding:8px 12px;border-radius:6px;margin-bottom:8px;border-left:4px solid #F4B43A}
+footer{background:#062152;color:#F4B43A;text-align:center;padding:15px;margin-top:25px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><img src="logo.jpg" alt="Logo"><h1>BẢO TÀNG SỐ THPT NAM CAO</h1></div>
+  <nav><a href="#lichsu">Lịch sử</a><a href="#xuanay">Xưa & Nay</a><a href="#tochuc">Tổ chức</a><a href="#tuongtac">Đố vui & Lưu bút</a></nav>
+</header>
+<div class="hero">
+  <h2>Trường THPT Nam Cao — Hơn 20 Năm Xây Dựng & Phát Triển</h2>
+  <p>Xã Nhân Hà, tỉnh Ninh Bình (trước đây thuộc xã Nhân Mỹ, huyện Lý Nhân, tỉnh Hà Nam)</p>
+  <div class="stats">
+    <div class="stat"><b>2002</b>Năm thành lập</div>
+    <div class="stat"><b>11.798 m²</b>Diện tích</div>
+    <div class="stat"><b>18 Lớp / 755 HS</b>Quy mô 2025-2026</div>
+    <div class="stat"><b>100%</b>Đỗ Tốt nghiệp</div>
+  </div>
+</div>
+<section id="lichsu">
+  <h2 class="title">Dòng Thời Gian Lịch Sử</h2>
+  <div class="tabs">
+    <button class="tab active" onclick="moc(0,this)">2002 - Thành lập</button>
+    <button class="tab" onclick="moc(1,this)">2009 - Công lập</button>
+    <button class="tab" onclick="moc(2,this)">Cơ sở vật chất</button>
+    <button class="tab" onclick="moc(3,this)">2025-2026</button>
+  </div>
+  <div class="box" id="ndMoc">
+    <h3>🌱 Ngày 04/7/2002: Thành lập Trường THPT Bán công Nam Cao</h3>
+    <p>Thành lập theo Quyết định số 752/2002/QĐ-UB của UBND tỉnh Hà Nam.</p>
+  </div>
+</section>
+
+<section id="xuanay">
+  <h2 class="title">Diện Mạo Trường Xưa & Nay</h2>
+  <div class="box" style="text-align:center">
+    <div class="tabs">
+      <button class="tab active" onclick="doiAnh(0,this)">1. Cổng trường</button>
+    </div>
+    <div class="img-wrap">
+      <img id="newImg" src="nay1.jpg" alt="Náy">
+      <img id="oldImg" src="xua1.jpg" alt="Nay">
+    </div>
+    <input type="range" id="keo" min="0" max="100" value="50" oninput="document.getElementById('oldImg').style.clipPath=`inset(0 ${100-this.value}% 0 0)`">
+  </div>
+</section>
+<section id="tochuc">
+  <h2 class="title">Tổ Chuyên Môn & Thành Tích</h2>
+  <input type="text" class="search" id="tim" onkeyup="loc()" placeholder="🔍 Nhập từ khóa (Toán, Tin, Thạc sĩ, Phòng bộ môn...)">
+  <div class="grid">
+    <div class="card item"><h4>👩‍🏫 Đội ngũ CBGV</h4><p>46 người (03 quản lý, 37 GV, 06 nhân viên). 100% đạt chuẩn, có 11 Thạc sĩ (27,5%).</p></div>
+    <div class="card item"><h4>📚 04 Tổ Chuyên Môn</h4><p>Toán-Tin-CN; Văn-Sử; Sinh-Lí-Địa-GDKT&PL; Ngoại ngữ-Hóa-GDTC-GDQPAN và tổ Văn phòng.</p></div>
+    <div class="card item"><h4>🏫 Cơ sở vật chất</h4><p>18 phòng học, 07 phòng bộ môn (02 phòng Tin học, Lí, Hóa, Sinh, Anh, CN) và nhà đa năng.</p></div>
+    <div class="card item"><h4>🏆 Thành tích nổi bật</h4><p>5 năm liền Tập thể lao động tiên tiến, tỷ lệ đỗ tốt nghiệp 100%, nhiều giải HSG cấp tỉnh.</p></div>
+  </div>
+</section>
+
+<section id="tuongtac">
+  <h2 class="title">Góc Tương Tác & Lưu Bút</h2>
+  <div class="grid">
+    <div class="box">
+      <h3 style="color:#0A367E">🎯 Đố Vui THPT Nam Cao</h3>
+      <p id="cauHoi"><b>Câu 1: Trường chuyển sang công lập năm nào?</b></p>
+      <div id="nutDapAn">
+        <button class="btn" onclick="check(false)">A. Năm 2002</button>
+        <button class="btn" onclick="check(true)">B. Năm 2009</button>
+        <button class="btn" onclick="check(false)">C. Năm 2015</button>
+      </div>
+      <p id="kqQuiz" style="margin-top:8px;font-weight:bold"></p>
+    </div>
+    <div class="box">
+      <h3 style="color:#0A367E">✍️ Sổ Lưu Bút Điện Tử</h3>
+      <form onsubmit="guiBut(event)">
+        <input type="text" id="ten" placeholder="Tên & lớp của bạn..." required>
+        <textarea id="loi" rows="2" placeholder="Lời tri ân thầy cô và mái trường..." required></textarea>
+        <button type="submit" class="btn" style="text-align:center">Gửi Lưu Bút</button>
+      </form>
+      <div class="notes" id="dsBut"><div class="note"><b>Học sinh K22:</b> Tự hào mái trường Nam Cao!</div></div>
+    </div>
+  </div>
+</section>
+<footer><p>© 2026 Dự án STEM Tin học 11 — Trường THPT Nam Cao</p></footer>
+<script>
+const dataMoc=[
+  {t:"🌱 04/7/2002: Thành lập THPT Bán công Nam Cao",n:"Theo QĐ số 752/2002/QĐ-UB của UBND tỉnh Hà Nam."},
+  {t:"🏫 17/7/2009: Chuyển sang THPT Công lập",n:"Theo QĐ số 819/QĐ-UBND, chính thức mang tên Trường THPT Nam Cao."},
+  {t:"💻 Cơ sở vật chất hiện đại",n:"Diện tích 11.798 m², 18 phòng học, 07 phòng bộ môn (02 phòng Tin), thư viện chuẩn."},
+  {t:"🚀 Năm học 2025 - 2026",n:"18 lớp với 755 học sinh, 46 CBGV, tỷ lệ đỗ tốt nghiệp 100%."}
+];
+function moc(i,b){
+  document.getElementById("ndMoc").innerHTML=`<h3>${dataMoc[i].t}</h3><p>${dataMoc[i].n}</p>`;
+  b.parentElement.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+}
+const dsAnh=[{x:"xua1.jpg",n:"nay1.jpg"},{x:"xua2.jpg",n:"nay2.jpg"},{x:"xua3.jpg",n:"nay3.jpg"}];
+function doiAnh(i,b){
+  document.getElementById("oldImg").src=dsAnh[i].x;
+  document.getElementById("newImg").src=dsAnh[i].n;
+  document.getElementById("keo").value=50;
+  document.getElementById("oldImg").style.clipPath="inset(0 50% 0 0)";
+  b.parentElement.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+}
+function loc(){
+  let k=document.getElementById("tim").value.toLowerCase();
+  document.querySelectorAll(".item").forEach(c=>c.style.display=c.innerText.toLowerCase().includes(k)?"block":"none");
+}
+const quiz=[
+  {q:"Câu 1: Trường chuyển sang công lập năm nào?",o:["A. 2009","B. 2002","C. 2015"],a:1},
+  {q:"Câu 2: Trường có bao nhiêu phòng bộ môn Tin học?",o:["A. 01 phòng","B. 02 phòng","C. 03 phòng"],a:1},
+  {q:"Câu 3: Diện tích khuôn viên trường là bao nhiêu?",o:["A. 11.798 m²","B. 8.500 m²","C. 15.000 m²"],a:0}
+];
+let idx=0;
+function check(ok){
+  let kq=document.getElementById("kqQuiz");
+  kq.style.color=ok?"#0A367E":"red";
+  kq.innerText=ok?"🎉 Chính xác!":"❌ Chưa đúng rồi!";
+  setTimeout(()=>{
+    idx=(idx+1)%quiz.length;
+    document.getElementById("cauHoi").innerHTML=`<b>${quiz[idx].q}</b>`;
+    document.getElementById("nutDapAn").innerHTML=quiz[idx].o.map((x,i)=>`<button class="btn" onclick="check(${i===quiz[idx].a})">${x}</button>`).join("");
+    kq.innerText="";
+  },1200);
+}
+function guiBut(e){
+  e.preventDefault();
+  let t=document.getElementById("ten").value,l=document.getElementById("loi").value;
+  document.getElementById("dsBut").insertAdjacentHTML("afterbegin",`<div class="note"><b>${t}:</b> ${l}</div>`);
+  e.target.reset();
+}
+</script>
+</body>
+</html>
